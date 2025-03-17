@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:38:18 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/17 12:51:29 by jedusser         ###   ########.fr       */
+/*   Updated: 2025/03/17 13:05:00 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main(void)
 {
     std::string name = "Joe";
-    int grade = 1;
+    int grade = 0;
     
     Bureaucrat *bc2 = NULL;
     
@@ -23,11 +23,11 @@ int main(void)
     {
         bc2 = new Bureaucrat(name, grade);
         // ddddd
-        std::cout << bc2;
+        std::cout << *bc2;
     }
     catch (const Bureaucrat::gradeTooLowException& e)
     {
-        std::cout << "too low in main" << std::endl;
+        std::cout << "Erreur : " << e.what() << std::endl;
         return 0;
     }
     // catch (std::range_error &e)
