@@ -6,11 +6,17 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:38:18 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/17 13:05:00 by jedusser         ###   ########.fr       */
+/*   Updated: 2025/03/17 13:15:38 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+
+void createBureaucrat(const std::string &name, const int &grade)
+{
+    
+}
 
 int main(void)
 {
