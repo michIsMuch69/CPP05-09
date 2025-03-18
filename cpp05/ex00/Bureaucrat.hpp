@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
+/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:38:16 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/17 13:05:33 by jedusser         ###   ########.fr       */
+/*   Updated: 2025/03/18 20:16:35 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,42 +16,60 @@
 #include <string>
 #include <iostream>
 #include <cstring>
+#include <stdlib.h>
 
 class Bureaucrat
 {
     private : 
+    
         std::string _name;
         int     _grade;
-
+        
     public :
+
+        
         Bureaucrat();
+
         Bureaucrat(const std::string &name, const int &grade);
         Bureaucrat(const Bureaucrat&);
         Bureaucrat& operator=(const Bureaucrat&);
         
+        ~Bureaucrat();
+        
+        void incrementGrade();
+        void decrementGrade();
+        
+        const int &getGrade() const;
+        const std::string& getName() const;
+        
+
+        //###################Exception Classes###################//
         class gradeTooLowException : public std::exception
         {
             private :
-            std::string _message;
-          public :
-            gradeTooLowException(const std::string& message) throw() : _message(message){}
-            virtual ~gradeTooLowException() throw() {}
-            virtual const char* what()  const throw()
-            {
-                return _message.c_str();
-            }
+               std::string _message;
+            public :
+                gradeTooLowException(const std::string& message) throw() : _message(message){}
+                virtual ~gradeTooLowException() throw() {}
+                virtual const char* what()  const throw()
+                {
+                    return _message.c_str();
+                }
+            };
+
+        class gradeTooHighException : public std::exception
+        {
+            private :
+                std::string _message;
+            public :
+                gradeTooHighException(const std::string& message) throw() : _message(message){}
+                virtual ~gradeTooHighException() throw() {}
+                virtual const char* what()  const throw()
+                {
+                    return _message.c_str();
+                }
         };
-        
-        ~Bureaucrat();
-
-        
-
-        void incrementGrade(int grade);
-        void decrementGrade(int grade);
-
-        const int &getGrade() const;
-        const std::string& getName() const;
-
+        //###################Exception Classes###################//
 
 };
 

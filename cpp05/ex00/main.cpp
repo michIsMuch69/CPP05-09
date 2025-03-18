@@ -3,44 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
+/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:38:18 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/17 13:15:38 by jedusser         ###   ########.fr       */
+/*   Updated: 2025/03/18 16:52:59 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
+// void createBureaucrat(const std::string& name, const int& grade)
+// {
+//     // Bureaucrat *bc = NULL;
+    
+// }
 
-void createBureaucrat(const std::string &name, const int &grade)
+int main(int argc, char **argv)
 {
-    
-}
+    if (argc == 3)
+    {
 
-int main(void)
-{
-    std::string name = "Joe";
-    int grade = 0;
-    
-    Bureaucrat *bc2 = NULL;
-    
-    try
-    {
-        bc2 = new Bureaucrat(name, grade);
-        // ddddd
-        std::cout << *bc2;
-    }
-    catch (const Bureaucrat::gradeTooLowException& e)
-    {
-        std::cout << "Erreur : " << e.what() << std::endl;
-        return 0;
-    }
-    // catch (std::range_error &e)
-    // {
         
-    // }
+        std::string name = argv[1];
+        int grade = atoi(argv[2]);
+
+        Bureaucrat *bc = NULL;
+
     
-    // if (bc2 != NULL)
+        try
+        {
+            bc = new Bureaucrat(name, grade);
+            
+            std::cout << *bc;
+            bc->incrementGrade();
+            std::cout << *bc;
+
+            // bc->decrementGrade();
+            // std::cout << *bc;
+            
+        }
+        catch (const Bureaucrat::gradeTooLowException& e)
+        {
+            std::cout << "Error: " << e.what() << std::endl;
+        }
+        catch(const Bureaucrat::gradeTooHighException& e)
+        {
+            std::cout << "Error: " << e.what() << std::endl;
+        }
+        delete (bc);
+    }
+    return (0);
     
 }
+// Bureaucrat::GradeTooHighException
