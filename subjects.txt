@@ -1,0 +1,5 @@
+cpp05 : https://cdn.intra.42.fr/pdf/pdf/149057/en.subject.pdf 
+cpp06 : https://cdn.intra.42.fr/pdf/pdf/148293/en.subject.pdf
+cpp07 : https://cdn.intra.42.fr/pdf/pdf/148292/en.subject.pdf
+cpp08 : https://cdn.intra.42.fr/pdf/pdf/148291/fr.subject.pdf
+cpp09 : https://cdn.intra.42.fr/pdf/pdf/154762/fr.subject.pdf
