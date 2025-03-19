@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 11:12:55 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/19 13:27:09 by jedusser         ###   ########.fr       */
+/*   Updated: 2025/03/19 14:02:46 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,26 @@ Form& Form::operator=(const Form &other)
     return (*this);    
 }
 
+std::ostream& operator<<(std::ostream &o, const Form &i)
+{
+        o   << "Form : " 
+            << i.getName() << std::endl
+            << "Status :";
+        
+        if (i.getFormStatus() == true)
+            o << "SIGNED" << std::endl;
+        else
+            o << "NOT SIGNED" << std::endl;
+            
+        o   << "Grade required for signing : "
+            << i.getGradeRequiredSign() << std::endl
+            << "Grade required for execution : "
+            << i.getGradeRequiredExec() << std::endl;
+
+        return (o);
+}
+
+Form::~Form(){};
 
 const std::string& Form::getName() const
 {
