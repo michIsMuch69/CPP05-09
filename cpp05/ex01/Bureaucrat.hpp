@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jean-micheldusserre <jean-micheldusserr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:38:16 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/19 20:45:57 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/20 11:39:54 by jean-michel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iostream>
 #include <cstring>
 #include <stdlib.h>
+#include "Form.hpp"
 
 class Bureaucrat
 {
@@ -41,6 +42,8 @@ class Bureaucrat
         
         const int &getGrade() const;
         const std::string& getName() const;
+
+        void signForm(Form &form);
         
 
         //###################Exception Classes###################

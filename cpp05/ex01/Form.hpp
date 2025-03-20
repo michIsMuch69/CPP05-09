@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jean-micheldusserre <jean-micheldusserr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 11:12:58 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/19 20:55:45 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/20 11:28:56 by jean-michel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 #include <stdlib.h>
 
 class Bureaucrat;
-
 
 class Form
 {
@@ -40,6 +39,32 @@ class Form
         const bool& getFormStatus() const;
         const int& getGradeRequiredSign() const;
         const int& getGradeRequiredExec() const;
+
+        void beSigned(const Bureaucrat &);
+
+        //###################Exception Classes###################
+
+        class gradeTooLowException : public std::exception
+        {
+            protected :
+                std::string _message;
+            public :
+                gradeTooLowException(const std::string& message) throw() : _message(message){}
+                virtual ~gradeTooLowException() throw() {}
+                virtual const char* what()  const throw()
+                {
+                    return _message.c_str();
+                }
+            };
+
+        class gradeTooHighException : virtual public gradeTooLowException
+        {
+            public :
+                gradeTooHighException(const std::string& message) throw() : gradeTooLowException(message){}
+                virtual ~gradeTooHighException() throw() {}
+        };
+        //###################Exception Classes###################//
+        
 
         // class gradeTooLowException
           

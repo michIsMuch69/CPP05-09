@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jean-micheldusserre <jean-micheldusserr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:38:13 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/19 21:07:09 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/20 11:38:53 by jean-michel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 
 Bureaucrat::Bureaucrat()
@@ -89,4 +90,9 @@ void Bureaucrat::decrementGrade()
     if (this->_grade == 150)
         throw(gradeTooLowException("Grade is already at his minimum."));
     this->_grade++;
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+    form.beSigned(*this);
 }
