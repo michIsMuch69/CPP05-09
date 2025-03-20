@@ -6,7 +6,7 @@
 /*   By: jean-micheldusserre <jean-micheldusserr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 11:12:55 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/20 11:36:49 by jean-michel      ###   ########.fr       */
+/*   Updated: 2025/03/20 19:04:48 by jean-michel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,18 @@ Form::~Form(){};
 
 void Form::beSigned(const Bureaucrat& bc)
 {
-    if (bc.getGrade() < this->_grade_required_sign)
-        throw(gradeTooLowException("Bureaucrat does not have right to sign this form"));
+    if (bc.getGrade() > this->_grade_required_sign) 
+    {
+        throw gradeTooLowException(
+            "Bureaucrat [" + bc.getName() + "] with grade [" +
+            std::to_string(bc.getGrade()) + "] cannot sign form [" +
+            this->_name + "] because required grade is [" +
+            std::to_string(this->_grade_required_sign) + "]."
+        );
+    }
     this->_formStatus = true;
 }
+
 
 const std::string& Form::getName() const
 {

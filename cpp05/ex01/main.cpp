@@ -6,7 +6,7 @@
 /*   By: jean-micheldusserre <jean-micheldusserr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:38:18 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/20 11:45:06 by jean-michel      ###   ########.fr       */
+/*   Updated: 2025/03/20 19:07:55 by jean-michel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ Form* createForm(const std::string& name, bool& formStatus, const int& grade_req
     Form *f = NULL;
     try
     {
-       f = new Form(name, formStatus, grade_required_sign, grade_required_exec);
+        f = new Form(name, formStatus, grade_required_sign, grade_required_exec);
         
         std::cout << *f << std::endl;
         return (f);
@@ -73,7 +73,7 @@ Form* createForm(const std::string& name, bool& formStatus, const int& grade_req
 
 int main()
 {
-    Bureaucrat *bc = createBureaucrat("joe", 2);
+    Bureaucrat *bc = createBureaucrat("joe", 0);
     std::cout << *bc << std::endl;
 
 
@@ -91,9 +91,10 @@ int main()
     }
 
     std::cout << *f << std::endl;
-    
-    delete(bc);
-    delete(f);
+    if (bc)
+        delete(bc);
+    if (f)
+        delete(f);
     return (0);
     
 }
