@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jean-micheldusserre <jean-micheldusserr    +#+  +:+       +#+        */
+/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 11:12:55 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/20 19:04:48 by jean-michel      ###   ########.fr       */
+/*   Updated: 2025/03/20 19:25:49 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,14 @@ void Form::beSigned(const Bureaucrat& bc)
 {
     if (bc.getGrade() > this->_grade_required_sign) 
     {
-        throw gradeTooLowException(
-            "Bureaucrat [" + bc.getName() + "] with grade [" +
-            std::to_string(bc.getGrade()) + "] cannot sign form [" +
-            this->_name + "] because required grade is [" +
-            std::to_string(this->_grade_required_sign) + "]."
-        );
+        std::ostringstream oss;
+        oss << "Bureaucrat [" << bc.getName() 
+            << "] with grade [" << bc.getGrade()
+            << "] cannot sign form [" << this->_name 
+            << "] because required grade is [" << this->_grade_required_sign << "].";
+
+        throw(gradeTooLowException(oss.str()));
+
     }
     this->_formStatus = true;
 }

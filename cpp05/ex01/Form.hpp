@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jean-micheldusserre <jean-micheldusserr    +#+  +:+       +#+        */
+/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 11:12:58 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/20 18:55:26 by jean-michel      ###   ########.fr       */
+/*   Updated: 2025/03/20 19:26:13 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <iostream>
 #include <cstring>
 #include <stdlib.h>
+#include <sstream>
 
 class Bureaucrat;
 
