@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 11:12:58 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/25 13:33:47 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/20 19:26:13 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@
 
 class Bureaucrat;
 
-class Form
+// Keep in mind the form’s attributes need to remain private and that
+// they are in the base class.
+
+class AForm
 {
     private :
         const std::string _name;
@@ -31,10 +34,10 @@ class Form
         const int _grade_required_exec;
         
     public :
-        Form(const std::string& name, const int& grade_required_sign, const int& grade_required_exec);
-        Form(const Form&);
-        Form& operator=(const Form&);
-        ~Form();
+        AForm(const std::string& name, const int& grade_required_sign, const int& grade_required_exec);
+        AForm(const AForm&);
+        AForm& operator=(const AForm&);
+        ~AForm();
         
         const std::string& getName() const;
         const bool& getFormStatus() const;
@@ -42,6 +45,11 @@ class Form
         const int& getGradeRequiredExec() const;
 
         void beSigned(const Bureaucrat &);
+
+//         (Bureaucrat const & executor) const member function to
+// the base form and implement a function to execute the form’s action of the concrete
+// classes
+
 
         //###################Exception Classes###################
 
@@ -71,7 +79,7 @@ class Form
           
 };
 
-std::ostream& operator<<(std::ostream &o, const Form &i);
+std::ostream& operator<<(std::ostream &o, const AForm &i);
 
 
 #endif

@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 11:12:55 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/25 13:34:10 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/25 13:32:31 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
 #include "Bureaucrat.hpp"
 
-Form::Form(const std::string& name, const int& grade_required_sign, const int& grade_required_exec)
+AForm::AForm(const std::string& name, const int& grade_required_sign, const int& grade_required_exec)
         :   _name(name), _formStatus(false), 
             _grade_required_sign(grade_required_sign),
             _grade_required_exec(grade_required_exec)
@@ -23,30 +23,30 @@ Form::Form(const std::string& name, const int& grade_required_sign, const int& g
         throw(gradeTooLowException("Grade too low, must be between 1 and 150."));
     if (_grade_required_exec > 150 || grade_required_sign > 150)
         throw(gradeTooHighException("Grade too high must be between 1 and 150."));
-    std::cout   << "Form "  
+    std::cout   << "AForm "  
                 << name 
                 << " Constructor called." 
                 << std::endl;
 }
 
-Form::Form(const Form &other) 
+AForm::AForm(const AForm &other) 
 : _name(other._name), _formStatus(other._formStatus),
     _grade_required_sign(other._grade_required_sign),
     _grade_required_exec(other._grade_required_exec) 
 {
-    std::cout << "Form Copy Constructor called." << std::endl;
+    std::cout << "AForm Copy Constructor called." << std::endl;
 }
 
-Form& Form::operator=(const Form &other)
+AForm& AForm::operator=(const AForm &other)
 {
     if (this != &other)
         _formStatus = other._formStatus;
     return (*this);    
 }
 
-std::ostream& operator<<(std::ostream &o, const Form &i)
+std::ostream& operator<<(std::ostream &o, const AForm &i)
 {
-        o   << "Form : " 
+        o   << "AForm : " 
             << i.getName() << std::endl
             << "Status :";
         
@@ -63,9 +63,9 @@ std::ostream& operator<<(std::ostream &o, const Form &i)
         return (o);
 }
 
-Form::~Form(){};
+AForm::~AForm(){};
 
-void Form::beSigned(const Bureaucrat& bc)
+void AForm::beSigned(const Bureaucrat& bc)
 {
     if (bc.getGrade() > this->_grade_required_sign) 
     {
@@ -82,22 +82,22 @@ void Form::beSigned(const Bureaucrat& bc)
 }
 
 
-const std::string& Form::getName() const
+const std::string& AForm::getName() const
 {
     return (this->_name);
 }
 
-const bool& Form::getFormStatus() const
+const bool& AForm::getFormStatus() const
 {
     return(this->_formStatus);
 }
 
-const int& Form::getGradeRequiredSign() const
+const int& AForm::getGradeRequiredSign() const
 {
     return (this->_grade_required_sign);
 }
 
-const int& Form::getGradeRequiredExec() const
+const int& AForm::getGradeRequiredExec() const
 {
     return (this->_grade_required_exec);
 }

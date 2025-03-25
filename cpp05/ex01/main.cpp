@@ -23,8 +23,7 @@ int runProgram()
         bc = new Bureaucrat("joe", 5);  // peut throw une except.
         std::cout << *bc << std::endl;
     
-        bool isSigned = false;
-        f = new Form("B52", isSigned, 5, 19);  // peut throw une excapt
+        f = new Form("B52", 5, 19);  // peut throw une excapt
         std::cout << *f << std::endl;
     
         f->beSigned(*bc);
