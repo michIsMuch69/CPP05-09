@@ -22,9 +22,6 @@
 
 class Bureaucrat;
 
-// Keep in mind the form’s attributes need to remain private and that
-// they are in the base class.
-
 class AForm
 {
     private :
@@ -37,46 +34,29 @@ class AForm
         AForm(const std::string& name, const int& grade_required_sign, const int& grade_required_exec);
         AForm(const AForm&);
         AForm& operator=(const AForm&);
-        ~AForm();
+        virtual ~AForm();
         
         const std::string& getName() const;
         const bool& getFormStatus() const;
         const int& getGradeRequiredSign() const;
         const int& getGradeRequiredExec() const;
-
+        
         void beSigned(const Bureaucrat &);
-
-//         (Bureaucrat const & executor) const member function to
-// the base form and implement a function to execute the form’s action of the concrete
-// classes
-
+        virtual void execute(Bureaucrat const &executor) const =0;
 
         //###################Exception Classes###################
 
-        class gradeTooLowException : public std::exception
+        class formNotSignedException : public std::exception
         {
-            protected :
+            protected:
                 std::string _message;
-            public :
-                gradeTooLowException(const std::string& message) throw() : _message(message){}
-                virtual ~gradeTooLowException() throw() {}
-                virtual const char* what()  const throw()
-                {
-                    return _message.c_str();
-                }
-            };
-
-        class gradeTooHighException : virtual public gradeTooLowException
-        {
-            public :
-                gradeTooHighException(const std::string& message) throw() : gradeTooLowException(message){}
-                virtual ~gradeTooHighException() throw() {}
+            public:
+                formNotSignedException(const std::string &message) throw() : _message(message) {}
+                virtual ~formNotSignedException() throw() {}
+                virtual const char* what() const throw() { return _message.c_str(); }
         };
-        //###################Exception Classes###################//
         
-
-        // class gradeTooLowException
-          
+        //###################Exception Classes###################//
 };
 
 std::ostream& operator<<(std::ostream &o, const AForm &i);

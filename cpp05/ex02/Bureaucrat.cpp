@@ -6,12 +6,13 @@
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:38:13 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/25 10:36:36 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/26 12:23:44 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 
 Bureaucrat::Bureaucrat()
@@ -95,4 +96,19 @@ void Bureaucrat::decrementGrade()
 void Bureaucrat::signForm(AForm &form)
 {
     form.beSigned(*this);
+}
+
+void Bureaucrat::executeForm(AForm const &form)
+{
+    if (form.getFormStatus() == false)
+    {
+        std::ostringstream oss;
+        oss << "Bureaucrat [" << _name
+            << "] with grade [" <<_grade
+            << "] cannot execute form [" << form.getName( )
+            << "] because form status is [" << (form.getFormStatus() == 0 ? "Not Signed" : "Signed") << "].";
+        throw (AForm::formNotSignedException(oss.str()));
+    }
+    
+    form.execute(*this);
 }

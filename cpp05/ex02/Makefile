@@ -6,7 +6,7 @@
 #    By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 14:38:21 by jedusser          #+#    #+#              #
-#    Updated: 2025/03/25 10:17:37 by michismuch       ###   ########.fr        #
+#    Updated: 2025/03/26 15:45:08 by michismuch       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,10 @@ NAME = third-ex
 
 SRCS = main.cpp \
 		Bureaucrat.cpp \
-		AForm.cpp
+		AForm.cpp \
+		PresidentialPardonForm.cpp \
+		ShrubberyCreationForm.cpp \
+		RobotomyRequestForm.cpp
        
 
 OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
@@ -39,6 +42,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp Makefile
 
 clean:
 	rm -rf $(OBJ_DIR)
+	rm -f *._shrubbery
 
 fclean: clean
 	rm -f $(NAME)
