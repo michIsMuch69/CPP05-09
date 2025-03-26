@@ -6,7 +6,7 @@
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:38:16 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/26 11:59:09 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/26 15:54:50 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,10 @@ class AForm;
 class Bureaucrat
 {
     private : 
-    
         const std::string _name;
         int     _grade;
         
     public :
-
-        
         Bureaucrat();
 
         Bureaucrat(const std::string &name, const int &grade);

@@ -6,7 +6,7 @@
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 10:21:44 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/26 14:46:55 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/26 15:57:44 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int runProgram()
     AForm* f = NULL;
     try
     {
-        bc = new Bureaucrat("joe", 1);  // peut throw une except.
+        bc = new Bureaucrat("Joe", 1);  // peut throw une except.
         std::cout << *bc << std::endl;
     
         f = new PresidentialPardonForm("Bill");  // peut throw une excapt

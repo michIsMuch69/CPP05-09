@@ -6,11 +6,10 @@
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 10:21:35 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/26 14:39:28 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/26 15:55:13 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// one parameter in their constructor: the target of the form
 #ifndef SHRUBBERY_CREATION_FORM_HPP
 #define SHRUBBERY_CREATION_FORM_HPP
 
@@ -22,7 +21,7 @@
 #include <sstream>
 
 #include "Bureaucrat.hpp"
-#include "AForm.hpp" // ??
+#include "AForm.hpp"
 
 class ShrubberyCreationForm : public AForm
 {
@@ -34,11 +33,7 @@ class ShrubberyCreationForm : public AForm
         ShrubberyCreationForm& operator=( const ShrubberyCreationForm &);
         ~ShrubberyCreationForm();
         void execute(Bureaucrat const &executor) const;
-
-        
-};
-    
-    
+}; 
     std::ostream& operator<<(std::ostream &o, const ShrubberyCreationForm &i);
 
 #endif

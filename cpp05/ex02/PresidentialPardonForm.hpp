@@ -6,7 +6,7 @@
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 10:21:24 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/26 10:56:05 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/26 15:55:02 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,8 @@ class PresidentialPardonForm : public AForm
         PresidentialPardonForm (const PresidentialPardonForm &);
         PresidentialPardonForm& operator=( const PresidentialPardonForm &);
         ~PresidentialPardonForm();
-        void execute(Bureaucrat const &executor) const;
-
-        
+        void execute(Bureaucrat const &executor) const;      
 };
-    
-    
     std::ostream& operator<<(std::ostream &o, const PresidentialPardonForm &i);
 
 #endif

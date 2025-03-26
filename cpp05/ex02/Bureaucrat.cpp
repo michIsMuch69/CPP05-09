@@ -6,7 +6,7 @@
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:38:13 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/26 12:23:44 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/26 15:57:15 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,4 +111,5 @@ void Bureaucrat::executeForm(AForm const &form)
     }
     
     form.execute(*this);
+    std::cout << _name << " executed " << form.getName() << std::endl;
 }
