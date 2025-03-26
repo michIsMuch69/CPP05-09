@@ -1,0 +1,102 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/19 11:12:55 by jedusser          #+#    #+#             */
+/*   Updated: 2025/03/26 12:02:12 by michismuch       ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "AForm.hpp"
+#include "Bureaucrat.hpp"
+
+AForm::AForm(const std::string& name, const int& grade_required_sign, const int& grade_required_exec)
+        :   _name(name), _formStatus(false), 
+            _grade_required_sign(grade_required_sign),
+            _grade_required_exec(grade_required_exec)
+{
+    if (_grade_required_exec < 1 || grade_required_sign < 1)
+        throw(Bureaucrat::gradeTooLowException("Grade too low, must be between 1 and 150."));
+    if (_grade_required_exec > 150 || grade_required_sign > 150)
+        throw(Bureaucrat::gradeTooHighException("Grade too high must be between 1 and 150."));
+    std::cout   << "AForm "  
+                << name 
+                << " Constructor called." 
+                << std::endl;
+}
+
+AForm::AForm(const AForm &other) 
+: _name(other._name), _formStatus(other._formStatus),
+    _grade_required_sign(other._grade_required_sign),
+    _grade_required_exec(other._grade_required_exec) 
+{
+    std::cout << "AForm Copy Constructor called." << std::endl;
+}
+
+AForm& AForm::operator=(const AForm &other)
+{
+    if (this != &other)
+        _formStatus = other._formStatus;
+    return (*this);    
+}
+
+std::ostream& operator<<(std::ostream &o, const AForm &i)
+{
+        o   << "AForm : " 
+            << i.getName() << std::endl
+            << "Status :";
+        
+        if (i.getFormStatus() == true)
+            o << "SIGNED" << std::endl;
+        else
+            o << "NOT SIGNED" << std::endl;
+            
+        o   << "Grade required for signing : "
+            << i.getGradeRequiredSign() << std::endl
+            << "Grade required for execution : "
+            << i.getGradeRequiredExec() << std::endl;
+
+        return (o);
+}
+
+AForm::~AForm(){};
+
+void AForm::beSigned(const Bureaucrat& bc)
+{
+    if (bc.getGrade() > this->_grade_required_sign) 
+    {
+        std::ostringstream oss;
+        oss << "Bureaucrat [" << bc.getName() 
+            << "] with grade [" << bc.getGrade()
+            << "] cannot sign form [" << this->_name 
+            << "] because required grade is [" << this->_grade_required_sign << "].";
+
+        throw(Bureaucrat::gradeTooLowException(oss.str()));
+
+    }
+    this->_formStatus = true;
+}
+
+
+const std::string& AForm::getName() const
+{
+    return (this->_name);
+}
+
+const bool& AForm::getFormStatus() const
+{
+    return(this->_formStatus);
+}
+
+const int& AForm::getGradeRequiredSign() const
+{
+    return (this->_grade_required_sign);
+}
+
+const int& AForm::getGradeRequiredExec() const
+{
+    return (this->_grade_required_exec);
+}

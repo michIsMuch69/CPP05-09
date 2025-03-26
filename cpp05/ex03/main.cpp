@@ -6,13 +6,14 @@
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 10:21:44 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/26 16:01:40 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/26 19:10:05 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "Intern.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -22,29 +23,39 @@ int runProgram()
 {
     Bureaucrat* bc = NULL;
     AForm* f = NULL;
+    Intern *i = NULL;
     try
     {
         bc = new Bureaucrat("Joe", 1);  // peut throw une except.
         std::cout << *bc << std::endl;
     
-        f = new PresidentialPardonForm("Bill");  // peut throw une excapt
-        std::cout << *f << std::endl;
-        bc->signForm(*f);
-        std::cout << *f << std::endl;
-        bc->executeForm(*f);
+        // f = new PresidentialPardonForm("Bill");  // peut throw une excapt
+        // std::cout << *f << std::endl;
+        // bc->signForm(*f);
+        // std::cout << *f << std::endl;
+        // bc->executeForm(*f);
 
-        f = new ShrubberyCreationForm("Shrub");  // peut throw une excapt
-        std::cout << *f << std::endl;   
-        bc->signForm(*f);
-        std::cout << *f << std::endl;
-        bc->executeForm(*f);
+        // f = new ShrubberyCreationForm("Shrub");  // peut throw une excapt
+        // std::cout << *f << std::endl;
+        // bc->signForm(*f);
+        // std::cout << *f << std::endl;
+        // bc->executeForm(*f);
         
-        f = new RobotomyRequestForm("Bender");  // peut throw une excapt
-        std::cout << *f << std::endl;
+        // f = new RobotomyRequestForm("Bender");  // peut throw une excapt
+        // std::cout << *f << std::endl;
+        // bc->signForm(*f);
+        // std::cout << *f << std::endl;
+        // bc->executeForm(*f);
+
+        f = i->makeForm("Presidential Pardon", "L.H.Oswald");
         bc->signForm(*f);
-        std::cout << *f << std::endl;
         bc->executeForm(*f);
 
+        f = i->makeForm("Robotomy Request", "Bender");
+        bc->signForm(*f);
+        bc->executeForm(*f);
+        //std::cout << i;
+        
         
         // f->beSigned(*bc);
         // std::cout << *f << std::endl;

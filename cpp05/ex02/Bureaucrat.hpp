@@ -6,7 +6,7 @@
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:38:16 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/26 15:54:50 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/26 16:08:01 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ class Bureaucrat
 
         void signForm(AForm &form);
         void executeForm(AForm const &form);
-        
 
         //###################Exception Classes###################
         class gradeException : public std::exception

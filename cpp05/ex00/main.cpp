@@ -43,7 +43,3 @@ int main()
 {
     return runProgram();
 }
-
-
-    // Bureaucrat::GradeTooHighException
-// Bureaucrat::GradeTooHighException

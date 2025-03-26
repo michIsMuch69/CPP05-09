@@ -6,7 +6,7 @@
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:38:16 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/25 10:31:32 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/26 15:54:33 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,29 +23,22 @@ class Form;
 class Bureaucrat
 {
     private : 
-    
         const std::string _name;
         int     _grade;
         
-    public :
-
-        
+    public : 
         Bureaucrat();
-
         Bureaucrat(const std::string &name, const int &grade);
         Bureaucrat(const Bureaucrat&);
         Bureaucrat& operator=(const Bureaucrat&);
-        
         ~Bureaucrat();
         
         void incrementGrade();
         void decrementGrade();
+        void signForm(Form &form);
         
         const int &getGrade() const;
         const std::string& getName() const;
-
-        void signForm(Form &form);
-        
 
         //###################Exception Classes###################
     

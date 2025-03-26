@@ -6,7 +6,7 @@
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:38:13 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/19 21:03:23 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/26 15:52:14 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ Bureaucrat::Bureaucrat(const std::string& name, const int &grade) : _name(name),
                 << name 
                 <<" Constructor called"
                 << std::endl;
-
 }
 
 Bureaucrat::~Bureaucrat()
@@ -37,7 +36,6 @@ Bureaucrat::~Bureaucrat()
                 << _name
                 << " Destructor Called"
                 << std::endl;
-
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : 
@@ -52,9 +50,7 @@ _grade(other._grade)
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {
     if (this != &other)
-    {
         _grade = other._grade;
-    }
     return (*this);
 }
 

@@ -6,12 +6,14 @@
 /*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:38:13 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/26 15:53:03 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/03/26 17:38:50 by michismuch       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+
 
 Bureaucrat::Bureaucrat()
 {
@@ -28,6 +30,7 @@ Bureaucrat::Bureaucrat(const std::string& name, const int &grade) : _name(name),
                 << name 
                 <<" Constructor called"
                 << std::endl;
+
 }
 
 Bureaucrat::~Bureaucrat()
@@ -36,6 +39,7 @@ Bureaucrat::~Bureaucrat()
                 << _name
                 << " Destructor Called"
                 << std::endl;
+
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : 
@@ -50,7 +54,9 @@ _grade(other._grade)
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {
     if (this != &other)
+    {
         _grade = other._grade;
+    }
     return (*this);
 }
 
@@ -87,7 +93,22 @@ void Bureaucrat::decrementGrade()
     this->_grade++;
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(AForm &form)
 {
     form.beSigned(*this);
+}
+
+void Bureaucrat::executeForm(AForm const &form)
+{
+    if (form.getFormStatus() == false)
+    {
+        std::ostringstream oss;
+        oss << "Bureaucrat [" << _name
+            << "] with grade [" <<_grade
+            << "] cannot execute form [" << form.getName( )
+            << "] because form status is [" << (form.getFormStatus() == 0 ? "Not Signed" : "Signed") << "].";
+        throw (AForm::formNotSignedException(oss.str()));
+    }
+    form.execute(*this);
+    std::cout << _name << " executed " << form.getName() << std::endl;
 }
