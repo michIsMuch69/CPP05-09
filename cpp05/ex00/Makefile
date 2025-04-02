@@ -6,7 +6,7 @@
 #    By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 14:38:21 by jedusser          #+#    #+#              #
-#    Updated: 2025/03/13 14:39:01 by jedusser         ###   ########.fr        #
+#    Updated: 2025/04/02 15:52:39 by jedusser         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ OBJ_DIR = obj
 NAME = first-ex
 
 SRCS = main.cpp \
-		Bureaucrat.cpp
+		Bureaucrat.cpp \
+		Exceptions.cpp
        
 
 OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)

@@ -6,7 +6,7 @@
 #    By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/02 08:59:25 by jedusser          #+#    #+#              #
-#    Updated: 2025/04/02 13:41:23 by jedusser         ###   ########.fr        #
+#    Updated: 2025/04/02 16:10:52 by jedusser         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ SRCS = main.cpp \
 		PresidentialPardonForm.cpp \
 		ShrubberyCreationForm.cpp \
 		RobotomyRequestForm.cpp	\
-		Intern.cpp
+		Intern.cpp \
+		Exceptions.cpp
        
 
 OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)

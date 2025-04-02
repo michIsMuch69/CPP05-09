@@ -6,17 +6,13 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:38:13 by jedusser          #+#    #+#             */
-/*   Updated: 2025/04/02 08:55:59 by jedusser         ###   ########.fr       */
+/*   Updated: 2025/04/02 16:11:48 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Bureaucrat::Bureaucrat()
-{
-    std::cout << "Bureaucrat Default Constructor called." << std::endl;
-}
 
 Bureaucrat::Bureaucrat(const std::string& name, const int &grade) : _name(name), _grade(grade)
 {

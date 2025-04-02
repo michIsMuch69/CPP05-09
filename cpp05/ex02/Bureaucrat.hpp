@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:38:16 by jedusser          #+#    #+#             */
-/*   Updated: 2025/04/02 08:56:54 by jedusser         ###   ########.fr       */
+/*   Updated: 2025/04/02 16:09:23 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ class Bureaucrat
         int     _grade;
         
     public :
-        Bureaucrat();
-
         Bureaucrat(const std::string &name, const int &grade);
         Bureaucrat(const Bureaucrat&);
         Bureaucrat& operator=(const Bureaucrat&);
@@ -50,23 +48,23 @@ class Bureaucrat
             protected:
                 std::string _message;
             public:
-                gradeException(const std::string &message) throw() : _message(message) {}
-                virtual ~gradeException() throw() {}
-                virtual const char* what() const throw() { return _message.c_str(); }
+                gradeException(const std::string &message) throw();
+                virtual ~gradeException() throw();
+                virtual const char* what() const throw();
         };
 
         class gradeTooLowException : public gradeException
         {
             public:
-                gradeTooLowException(const std::string &message) throw() : gradeException(message) {}
-                virtual ~gradeTooLowException() throw() {}
+                gradeTooLowException(const std::string &message) throw();
+                virtual ~gradeTooLowException() throw();
         };
 
         class gradeTooHighException : public gradeException
         {
             public:
-                gradeTooHighException(const std::string &message) throw() : gradeException(message) {}
-                virtual ~gradeTooHighException() throw() {}
+                gradeTooHighException(const std::string &message) throw();
+                virtual ~gradeTooHighException() throw();
         };
         //###################Exception Classes###################//
 

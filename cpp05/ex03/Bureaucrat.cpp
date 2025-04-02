@@ -6,19 +6,13 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 08:59:00 by jedusser          #+#    #+#             */
-/*   Updated: 2025/04/02 08:59:02 by jedusser         ###   ########.fr       */
+/*   Updated: 2025/04/02 16:10:38 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "PresidentialPardonForm.hpp"
-
-
-Bureaucrat::Bureaucrat()
-{
-    std::cout << "Bureaucrat Default Constructor called." << std::endl;
-}
 
 Bureaucrat::Bureaucrat(const std::string& name, const int &grade) : _name(name), _grade(grade)
 {

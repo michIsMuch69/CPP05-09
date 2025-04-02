@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 08:58:02 by jedusser          #+#    #+#             */
-/*   Updated: 2025/04/02 10:36:30 by jedusser         ###   ########.fr       */
+/*   Updated: 2025/04/02 16:05:29 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int runProgram()
     AForm* f = NULL;
     try
     {
-        bc = new Bureaucrat("Joe", 1);//ut throw une except.
+        bc = new Bureaucrat("Joe", 1530);//ut throw une except.
         std::cout << *bc << std::endl;
     
         f = new PresidentialPardonForm("Bill");  // peut throw une excapt
