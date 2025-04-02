@@ -1,12 +1,12 @@
-  /* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/13 14:38:18 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/20 19:32:42 by michismuch       ###   ########.fr       */
+/*   Created: 2025/04/02 08:55:39 by jedusser          #+#    #+#             */
+/*   Updated: 2025/04/02 13:38:22 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int runProgram()
     Bureaucrat* bc = NULL;
     try
     {
-        bc = new Bureaucrat("joe", 151);  // peut throw une except.
+        bc = new Bureaucrat("joe", 150);//ut throw une except.
         std::cout << *bc << std::endl;
     
        

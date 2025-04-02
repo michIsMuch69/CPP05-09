@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+         #
+#    By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 14:38:21 by jedusser          #+#    #+#              #
-#    Updated: 2025/03/26 15:45:08 by michismuch       ###   ########.fr        #
+#    Updated: 2025/04/02 13:40:55 by jedusser         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,8 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp Makefile
 
 clean:
 	rm -rf $(OBJ_DIR)
-	rm -f *._shrubbery
+	rm -f ./*_shrubbery
+
 
 fclean: clean
 	rm -f $(NAME)

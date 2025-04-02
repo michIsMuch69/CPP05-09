@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/25 10:21:20 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/26 12:35:23 by michismuch       ###   ########.fr       */
+/*   Created: 2025/04/02 08:58:13 by jedusser          #+#    #+#             */
+/*   Updated: 2025/04/02 09:36:07 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void PresidentialPardonForm::execute(const Bureaucrat &executor) const
             << "] with grade [" << executor.getGrade()
             << "] cannot execute form [" << this->getName()
             << "] because required grade is [" << this->getGradeRequiredExec() << "].";
-        throw (Bureaucrat::gradeTooLowException(oss.str()));
+        throw (gradeTooLowException(oss.str()));
     }
     std::cout   << this->_target
                     << " has been pardoned by Zaphod Beeblebrox." 

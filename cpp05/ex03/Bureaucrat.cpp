@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/13 14:38:13 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/26 17:38:50 by michismuch       ###   ########.fr       */
+/*   Created: 2025/04/02 08:59:00 by jedusser          #+#    #+#             */
+/*   Updated: 2025/04/02 08:59:02 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

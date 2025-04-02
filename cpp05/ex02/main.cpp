@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/25 10:21:44 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/26 16:01:40 by michismuch       ###   ########.fr       */
+/*   Created: 2025/04/02 08:58:02 by jedusser          #+#    #+#             */
+/*   Updated: 2025/04/02 10:36:30 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
@@ -24,7 +23,7 @@ int runProgram()
     AForm* f = NULL;
     try
     {
-        bc = new Bureaucrat("Joe", 1);  // peut throw une except.
+        bc = new Bureaucrat("Joe", 1);//ut throw une except.
         std::cout << *bc << std::endl;
     
         f = new PresidentialPardonForm("Bill");  // peut throw une excapt
@@ -32,12 +31,15 @@ int runProgram()
         bc->signForm(*f);
         std::cout << *f << std::endl;
         bc->executeForm(*f);
+        delete(f);
 
-        f = new ShrubberyCreationForm("Shrub");  // peut throw une excapt
+        f = new ShrubberyCreationForm("Home");//peut throw une except
         std::cout << *f << std::endl;   
         bc->signForm(*f);
         std::cout << *f << std::endl;
         bc->executeForm(*f);
+        delete(f);
+
         
         f = new RobotomyRequestForm("Bender");  // peut throw une excapt
         std::cout << *f << std::endl;

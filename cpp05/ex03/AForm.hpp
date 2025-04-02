@@ -1,15 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/19 11:12:58 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/20 19:26:13 by michismuch       ###   ########.fr       */
+/*   Created: 2025/04/02 08:58:54 by jedusser          #+#    #+#             */
+/*   Updated: 2025/04/02 10:15:20 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef FORM_HPP
 #define FORM_HPP
@@ -44,8 +43,32 @@ class AForm
         void beSigned(const Bureaucrat &);
         virtual void execute(Bureaucrat const &executor) const =0;
 
-        //###################Exception Classes###################
+        //###################Exception Classes###################//
+        
+        class gradeException : public std::exception
+        {
+            protected:
+                std::string _message;
+            public:
+                gradeException(const std::string &message) throw() : _message(message) {}
+                virtual ~gradeException() throw() {}
+                virtual const char* what() const throw() { return _message.c_str(); }
+        };
 
+        class gradeTooLowException : public gradeException
+        {
+            public:
+                gradeTooLowException(const std::string &message) throw() : gradeException(message) {}
+                virtual ~gradeTooLowException() throw() {}
+        };
+
+        class gradeTooHighException : public gradeException
+        {
+            public:
+                gradeTooHighException(const std::string &message) throw() : gradeException(message) {}
+                virtual ~gradeTooHighException() throw() {}
+        };
+        
         class formNotSignedException : public std::exception
         {
             protected:

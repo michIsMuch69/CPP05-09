@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/25 10:21:32 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/26 15:25:16 by michismuch       ###   ########.fr       */
+/*   Created: 2025/04/02 08:57:33 by jedusser          #+#    #+#             */
+/*   Updated: 2025/04/02 13:42:14 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
             << "] with grade [" << executor.getGrade()
             << "] cannot execute form [" << this->getName()
             << "] because required grade is [" << this->getGradeRequiredExec() << "].";
-        throw (Bureaucrat::gradeTooLowException(oss.str()));
+        throw (gradeTooLowException(oss.str()));
     }
 
     
@@ -65,7 +65,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
     }
 
     
-    std::string filename = _target + "_shrubbery ";
+    std::string filename = _target + "_shrubbery";
     std::ofstream dest_file(filename.c_str());
     std::string src_line;
     std::string string = "  ";  

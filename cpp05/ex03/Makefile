@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+         #
+#    By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/03/13 14:38:21 by jedusser          #+#    #+#              #
-#    Updated: 2025/03/26 18:15:39 by michismuch       ###   ########.fr        #
+#    Created: 2025/04/02 08:59:25 by jedusser          #+#    #+#              #
+#    Updated: 2025/04/02 13:41:23 by jedusser         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98 -MMD -MP
 SRC_DIR = .
 OBJ_DIR = obj
 
-NAME = third-ex
+NAME = fourth-ex
 
 SRCS = main.cpp \
 		Bureaucrat.cpp \
@@ -43,7 +43,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp Makefile
 
 clean:
 	rm -rf $(OBJ_DIR)
-	rm -f *._shrubbery
+	rm -f ./*_shrubbery
 
 fclean: clean
 	rm -f $(NAME)

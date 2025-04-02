@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/26 16:05:30 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/26 18:01:15 by michismuch       ###   ########.fr       */
+/*   Created: 2025/04/02 08:59:15 by jedusser          #+#    #+#             */
+/*   Updated: 2025/04/02 08:59:17 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

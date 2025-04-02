@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:38:13 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/26 15:52:14 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/04/02 10:41:59 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,3 +86,5 @@ void Bureaucrat::decrementGrade()
         throw(gradeTooLowException("Grade is already at his minimum."));
     this->_grade++;
 }
+
+///

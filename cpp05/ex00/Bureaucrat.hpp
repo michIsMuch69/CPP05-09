@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:38:16 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/26 15:54:25 by michismuch       ###   ########.fr       */
+/*   Updated: 2025/04/02 13:37:20 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,23 +40,27 @@ class Bureaucrat
 
         //###################Exception Classes###################
     
-        class gradeTooLowException : public std::exception
+        class gradeException : public std::exception
         {
-            protected :
-               std::string _message;
-            public :
-                gradeTooLowException(const std::string& message) throw() : _message(message){}
-                virtual ~gradeTooLowException() throw() {}
-                virtual const char* what()  const throw()
-                {
-                    return _message.c_str();
-                }
-            };
+            protected:
+                std::string _message;
+            public:
+                gradeException(const std::string &message) throw() : _message(message) {}
+                virtual ~gradeException() throw() {}
+                virtual const char* what() const throw() { return _message.c_str(); }
+        };
 
-        class gradeTooHighException : virtual public gradeTooLowException
+        class gradeTooLowException : public gradeException
         {
-            public :
-                gradeTooHighException(const std::string& message) throw() : gradeTooLowException(message){}
+            public:
+                gradeTooLowException(const std::string &message) throw() : gradeException(message) {}
+                virtual ~gradeTooLowException() throw() {}
+        };
+
+        class gradeTooHighException : public gradeException
+        {
+            public:
+                gradeTooHighException(const std::string &message) throw() : gradeException(message) {}
                 virtual ~gradeTooHighException() throw() {}
         };
         //###################Exception Classes###################//

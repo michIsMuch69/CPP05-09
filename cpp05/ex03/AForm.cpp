@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/19 11:12:55 by jedusser          #+#    #+#             */
-/*   Updated: 2025/03/26 12:02:12 by michismuch       ###   ########.fr       */
+/*   Created: 2025/04/02 08:58:47 by jedusser          #+#    #+#             */
+/*   Updated: 2025/04/02 10:29:45 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,11 @@ void AForm::beSigned(const Bureaucrat& bc)
             << "] cannot sign form [" << this->_name 
             << "] because required grade is [" << this->_grade_required_sign << "].";
 
-        throw(Bureaucrat::gradeTooLowException(oss.str()));
+        throw(gradeTooLowException(oss.str()));
 
     }
     this->_formStatus = true;
 }
-
 
 const std::string& AForm::getName() const
 {

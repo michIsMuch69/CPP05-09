@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michismuch <michismuch@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/25 10:21:35 by michismuch        #+#    #+#             */
-/*   Updated: 2025/03/26 15:55:13 by michismuch       ###   ########.fr       */
+/*   Created: 2025/04/02 08:59:57 by jedusser          #+#    #+#             */
+/*   Updated: 2025/04/02 08:59:58 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
