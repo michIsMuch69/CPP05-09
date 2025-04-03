@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:38:16 by jedusser          #+#    #+#             */
-/*   Updated: 2025/04/02 16:09:23 by jedusser         ###   ########.fr       */
+/*   Updated: 2025/04/03 11:34:00 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,28 +43,28 @@ class Bureaucrat
         void executeForm(AForm const &form);
 
         //###################Exception Classes###################
-        class gradeException : public std::exception
+        class GradeException : public std::exception
         {
             protected:
                 std::string _message;
             public:
-                gradeException(const std::string &message) throw();
-                virtual ~gradeException() throw();
+                GradeException(const std::string &message) throw();
+                virtual ~GradeException() throw();
                 virtual const char* what() const throw();
         };
 
-        class gradeTooLowException : public gradeException
+        class GradeTooLowException : public GradeException
         {
             public:
-                gradeTooLowException(const std::string &message) throw();
-                virtual ~gradeTooLowException() throw();
+                GradeTooLowException(const std::string &message) throw();
+                virtual ~GradeTooLowException() throw();
         };
 
-        class gradeTooHighException : public gradeException
+        class GradeTooHighException : public GradeException
         {
             public:
-                gradeTooHighException(const std::string &message) throw();
-                virtual ~gradeTooHighException() throw();
+                GradeTooHighException(const std::string &message) throw();
+                virtual ~GradeTooHighException() throw();
         };
         //###################Exception Classes###################//
 

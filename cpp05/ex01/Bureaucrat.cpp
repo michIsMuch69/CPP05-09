@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 14:38:13 by jedusser          #+#    #+#             */
-/*   Updated: 2025/04/02 16:11:48 by jedusser         ###   ########.fr       */
+/*   Updated: 2025/04/03 11:33:11 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 Bureaucrat::Bureaucrat(const std::string& name, const int &grade) : _name(name), _grade(grade)
 {
     if (grade < 1)
-        throw (gradeTooLowException("Grade must be between 1 and 150."));
+        throw (GradeTooLowException("Grade must be between 1 and 150."));
     if (grade > 150)
-        throw(gradeTooHighException("Grade must be between 1 and 150."));
+        throw(GradeTooHighException("Grade must be between 1 and 150."));
     std::cout   << "Bureaucrat "
                 << name 
                 <<" Constructor called"
@@ -72,14 +72,14 @@ std::ostream &operator<<(std::ostream &o, Bureaucrat const &i)
 void Bureaucrat::incrementGrade()
 {
     if (this->_grade == 1)
-        throw(gradeTooHighException("Grade is already at his maximum."));
+        throw(GradeTooHighException("Grade is already at his maximum."));
     this->_grade--;
 }
 
 void Bureaucrat::decrementGrade()
 {
     if (this->_grade == 150)
-        throw(gradeTooLowException("Grade is already at his minimum."));
+        throw(GradeTooLowException("Grade is already at his minimum."));
     this->_grade++;
 }
 

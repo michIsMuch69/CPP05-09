@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 08:58:13 by jedusser          #+#    #+#             */
-/*   Updated: 2025/04/02 09:36:07 by jedusser         ###   ########.fr       */
+/*   Updated: 2025/04/03 11:32:47 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void PresidentialPardonForm::execute(const Bureaucrat &executor) const
             << "] with grade [" << executor.getGrade()
             << "] cannot execute form [" << this->getName()
             << "] because required grade is [" << this->getGradeRequiredExec() << "].";
-        throw (gradeTooLowException(oss.str()));
+        throw (GradeTooLowException(oss.str()));
     }
     std::cout   << this->_target
                     << " has been pardoned by Zaphod Beeblebrox." 

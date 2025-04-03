@@ -6,13 +6,15 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 08:56:16 by jedusser          #+#    #+#             */
-/*   Updated: 2025/04/02 08:56:21 by jedusser         ###   ########.fr       */
+/*   Updated: 2025/04/03 10:41:16 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include <iostream>
+#include "colors.hpp"
+
 
 int runProgram()
 {

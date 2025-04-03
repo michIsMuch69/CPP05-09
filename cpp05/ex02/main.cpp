@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 08:58:02 by jedusser          #+#    #+#             */
-/*   Updated: 2025/04/02 16:05:29 by jedusser         ###   ########.fr       */
+/*   Updated: 2025/04/03 10:39:54 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int runProgram()
     }
     catch (const std::exception &e)
     {
-        std::cerr << "Error: " << e.what() << std::endl;
+        std::cerr << RED << "Error: " << RESET << e.what() << std::endl;
         delete bc;
         delete f;
         return 1;

@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 11:12:55 by jedusser          #+#    #+#             */
-/*   Updated: 2025/04/02 13:52:43 by jedusser         ###   ########.fr       */
+/*   Updated: 2025/04/03 11:33:11 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ AForm::AForm(const std::string& name, const int& grade_required_sign, const int&
             _grade_required_exec(grade_required_exec)
 {
     if (_grade_required_exec < 1 || grade_required_sign < 1)
-        throw(gradeTooLowException("Grade too low, must be between 1 and 150."));
+        throw(GradeTooLowException("Grade too low, must be between 1 and 150."));
     if (_grade_required_exec > 150 || grade_required_sign > 150)
-        throw(gradeTooHighException("Grade too high must be between 1 and 150."));
+        throw(GradeTooHighException("Grade too high must be between 1 and 150."));
     std::cout   << "AForm "  
                 << name 
                 << " Constructor called." 
@@ -74,7 +74,7 @@ void AForm::beSigned(const Bureaucrat& bc)
             << "] cannot sign form [" << this->_name 
             << "] because required grade is [" << this->_grade_required_sign << "].";
 
-        throw(gradeTooLowException(oss.str()));
+        throw(GradeTooLowException(oss.str()));
 
     }
     this->_formStatus = true;
